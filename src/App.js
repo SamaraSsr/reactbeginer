@@ -9,6 +9,8 @@ import Careers from "./pages/careers";
 import NotFound from "./notfound";
 import CareersLayout from "./pages/careerlayout";
 import Report from "./pages/report";
+import ByUsingUseState from "./pages/hooks/useStatehook";
+
 const navItems = [
   {
     name: "Home",
@@ -38,17 +40,17 @@ const sideItems = ["one", "two", "three", "four"];
 // sunt! Asperiores vero doloribus fugiat debitis exercitationem quo
 // dolorem minima`;
 
-const obj = {
-  name: "samara",
-  coOrdinations: {
-    lat: "8383",
-    long: "8383",
-    subSub: {
-      lat: "8383",
-      long: "8383",
-    },
-  },
-};
+// const obj = {
+//   name: "samara",
+//   coOrdinations: {
+//     lat: "8383",
+//     long: "8383",
+//     subSub: {
+//       lat: "8383",
+//       long: "8383",
+//     },
+//   },
+// };
 
 const App = () => {
   return (
@@ -62,7 +64,7 @@ const App = () => {
         </aside>
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<>Hello world everyone!</>}></Route>
+            <Route path="/" element={<ByUsingUseState />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/Report" element={<Report />}></Route>
@@ -81,3 +83,11 @@ const App = () => {
 };
 
 export default App;
+
+// react hooks
+// usestate
+
+// componnent
+
+// birth (initialization)
+// death (destroy)
