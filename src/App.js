@@ -10,6 +10,7 @@ import NotFound from "./notfound";
 import CareersLayout from "./pages/careerlayout";
 import Report from "./pages/report";
 import ByUsingUseState from "./pages/hooks/useStatehook";
+import ByUsingUseReducer from "./pages/hooks/useReducerhook";
 
 const navItems = [
   {
@@ -32,6 +33,14 @@ const navItems = [
     name: "Report Problem",
     path: "/report",
   },
+  {
+    name: "Use State Hook",
+    path: "/usestate",
+  },
+  {
+    name: "Use Reducer Hook",
+    path: "/usereducer",
+  }
 ];
 const sideItems = ["one", "two", "three", "four"];
 
@@ -64,13 +73,15 @@ const App = () => {
         </aside>
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<ByUsingUseState />}></Route>
+            <Route path="/" element={<>Welcome to React Begineer</>}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/Report" element={<Report />}></Route>
             <Route path="/careers" element={<CareersLayout />}>
               <Route path=":stream" element={<Careers />}></Route>
             </Route>
+            <Route path="/usestate" element={<ByUsingUseState />}></Route>
+            <Route path="/usereducer" element={<ByUsingUseReducer />}></Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
@@ -91,3 +102,10 @@ export default App;
 
 // birth (initialization)
 // death (destroy)
+
+// counter  0
+
+// operartions:
+// 1. increment
+// 2. decrement
+// 3. reset to initial state
