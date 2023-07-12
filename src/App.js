@@ -11,6 +11,8 @@ import CareersLayout from "./pages/careerlayout";
 import Report from "./pages/report";
 import ByUsingUseState from "./pages/hooks/useStatehook";
 import ByUsingUseReducer from "./pages/hooks/useReducerhook";
+import ByUsingUseEffect from "./pages/hooks/useEffecthook";
+import ByUsingUseRef from "./pages/hooks/useRefhook";
 
 const navItems = [
   {
@@ -40,7 +42,15 @@ const navItems = [
   {
     name: "Use Reducer Hook",
     path: "/usereducer",
-  }
+  },
+  {
+    name: "Use Effect Hook",
+    path: "/useeffect",
+  },
+  {
+    name: "Use Ref Hook",
+    path: "/useref",
+  },
 ];
 const sideItems = ["one", "two", "three", "four"];
 
@@ -82,6 +92,8 @@ const App = () => {
             </Route>
             <Route path="/usestate" element={<ByUsingUseState />}></Route>
             <Route path="/usereducer" element={<ByUsingUseReducer />}></Route>
+            <Route path="/useeffect" element={<ByUsingUseEffect />}></Route>
+            <Route path="/useref" element={<ByUsingUseRef />}></Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
