@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useState } from "react";
 
 const ByUsingUseEffect = () => {
   const [posts, setPosts] = useState([]);
+  const [layoutValue, setLayoutValue] = useState([]);
 
   const postsList = posts.map((post) => {
     return (
@@ -29,10 +30,15 @@ const ByUsingUseEffect = () => {
   }, []);
 
   useLayoutEffect(() => {
-    console.log("useLayoutEffect");
-  });
+    setLayoutValue("From useLayoutEffect");
+  }, []);
 
-  return <>{postsList}</>;
+  return (
+    <>
+      Called Immediatly before useEffect Hook {layoutValue}
+      {postsList}
+    </>
+  );
 };
 
 export default ByUsingUseEffect;

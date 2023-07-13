@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-
+import { navItemValueContext } from "./App";
 const Navitem = ({ navItems }) => {
+  const value = useContext(navItemValueContext);
+
   return (
     <div className="d-flex justify-content-between navbar">
       <img
@@ -16,9 +19,15 @@ const Navitem = ({ navItems }) => {
             </li>
           ))}
         </ul>
+        {/* <button onClick={something}>Update</button> */}
       </div>
+      From NavBar: {value}
     </div>
   );
 };
 
 export default Navitem;
+
+// const something = () => {
+//   console.log('something executed')
+// }

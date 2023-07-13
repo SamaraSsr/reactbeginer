@@ -13,6 +13,9 @@ import ByUsingUseState from "./pages/hooks/useStatehook";
 import ByUsingUseReducer from "./pages/hooks/useReducerhook";
 import ByUsingUseEffect from "./pages/hooks/useEffecthook";
 import ByUsingUseRef from "./pages/hooks/useRefhook";
+import ByUsingUseContext from "./pages/hooks/useContexthook";
+import { createContext, useState } from "react";
+// import { useState } from "react";
 
 const navItems = [
   {
@@ -51,6 +54,14 @@ const navItems = [
     name: "Use Ref Hook",
     path: "/useref",
   },
+  {
+    name: "Use Context Hook",
+    path: "/usecontext",
+  },
+  {
+    name: "Use layoutEffect Hook ",
+    path: "/useLayoutEffect",
+  },
 ];
 const sideItems = ["one", "two", "three", "four"];
 
@@ -71,17 +82,26 @@ const sideItems = ["one", "two", "three", "four"];
 //   },
 // };
 
+export const navItemValueContext = createContext(null);
+
 const App = () => {
+  const [navItemValue, setNavItemValue] = useState();
+
   return (
     <>
       <header>
-        <Header items={navItems} />
+        <navItemValueContext.Provider value={navItemValue}>
+          <Header items={navItems} />
+        </navItemValueContext.Provider>
       </header>
       <section className="d-flex justify-content-between main-container">
         <aside className="sidebar">
           <Sidebar items={sideItems} />
         </aside>
         <main className="main-content">
+          <button
+            onClick={() => setNavItemValue("some value altered with useContext")}
+          >Update</button>
           <Routes>
             <Route path="/" element={<>Welcome to React Begineer</>}></Route>
             <Route path="/about" element={<About />}></Route>
@@ -94,6 +114,11 @@ const App = () => {
             <Route path="/usereducer" element={<ByUsingUseReducer />}></Route>
             <Route path="/useeffect" element={<ByUsingUseEffect />}></Route>
             <Route path="/useref" element={<ByUsingUseRef />}></Route>
+            <Route
+              path="/useLayoutEffect"
+              element={<ByUsingUseEffect />}
+            ></Route>
+            <Route path="/usecontext" element={<ByUsingUseContext />}></Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
@@ -121,3 +146,21 @@ export default App;
 // 1. increment
 // 2. decrement
 // 3. reset to initial state
+
+// parent and child relationship
+
+// 1 Way - APP > Header > NavItem > actual UI code that renders the navigation bar (data transfers from parent to child)
+
+// 1 Way NavItem > Header > APP (data transfers from child to parent)
+
+// {/* <button
+//   onClick={() =>
+//     setNavItemValue("some value altered with useState hook")
+//   }
+// >
+//   Click me
+// </button> */}
+
+// const something = () => {
+//   console.log("something executed");
+// };
