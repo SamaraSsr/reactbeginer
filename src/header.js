@@ -1,14 +1,14 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import Navitem from "./navitem";
-import { navItemValueContext } from "./App";
+// import { navItemValueContext } from "./App";
 
 const Header = ({ items }) => {
-  const value = useContext(navItemValueContext);
+  // const value = useContext(navItemValueContext);
 
   return (
     <>
-      From Header: {value}
-      <Navitem navItems={items} />;
+      {/* From Header: {value} */}
+      <Navitem navItems={items} />
     </>
   );
 };

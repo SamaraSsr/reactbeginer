@@ -15,6 +15,7 @@ import ByUsingUseEffect from "./pages/hooks/useEffecthook";
 import ByUsingUseRef from "./pages/hooks/useRefhook";
 import ByUsingUseContext from "./pages/hooks/useContexthook";
 import { createContext, useState } from "react";
+import ByUsingUseMemo from "./pages/hooks/useMemohook";
 // import { useState } from "react";
 
 const navItems = [
@@ -62,6 +63,10 @@ const navItems = [
     name: "Use layoutEffect Hook ",
     path: "/useLayoutEffect",
   },
+  {
+    name: "Use Memo Hook ",
+    path: "/usememo",
+  },
 ];
 const sideItems = ["one", "two", "three", "four"];
 
@@ -99,9 +104,9 @@ const App = () => {
           <Sidebar items={sideItems} />
         </aside>
         <main className="main-content">
-          <button
+          {/* <button
             onClick={() => setNavItemValue("some value altered with useContext")}
-          >Update</button>
+          >Update</button> */}
           <Routes>
             <Route path="/" element={<>Welcome to React Begineer</>}></Route>
             <Route path="/about" element={<About />}></Route>
@@ -119,6 +124,7 @@ const App = () => {
               element={<ByUsingUseEffect />}
             ></Route>
             <Route path="/usecontext" element={<ByUsingUseContext />}></Route>
+            <Route path="/usememo" element={<ByUsingUseMemo />}></Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
